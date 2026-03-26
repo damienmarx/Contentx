@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Templates from "./pages/Templates";
+import ExclusiveContentPage from "./pages/ExclusiveContentPage";
 
 
 function Router() {
@@ -15,6 +16,7 @@ function Router() {
       <Route path={"\\"} component={Home} />
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/templates"} component={Templates} />
+      <Route path={"/exclusive"} component={ExclusiveContentPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
