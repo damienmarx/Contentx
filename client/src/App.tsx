@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import Templates from "./pages/Templates";
 import ExclusiveContentPage from "./pages/ExclusiveContentPage";
 import SubscriptionsPage from "./pages/SubscriptionsPage";
+import ScenarioShowcase from "./pages/ScenarioShowcase";
 
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path={"/templates"} component={Templates} />
       <Route path={"/exclusive"} component={ExclusiveContentPage} />
       <Route path={"/subscriptions"} component={SubscriptionsPage} />
+      <Route path={"/scenarios"} component={ScenarioShowcase} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
