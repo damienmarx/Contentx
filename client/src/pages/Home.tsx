@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Play, Instagram, Youtube, MessageCircle, Music, Eye, Users, Star, Lock, Zap, Plus } from 'lucide-react';
+import AuditionModal from '@/components/AuditionModal';
 
 /**
  * MERGED DESIGN PHILOSOPHY
@@ -18,6 +19,7 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [auditionModalOpen, setAuditionModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -82,7 +84,7 @@ export default function Home() {
             <a href="#services" className="text-[#B9ADC9] hover:text-[#F7F2FF] transition font-semibold">Services</a>
             <a href="#process" className="text-[#B9ADC9] hover:text-[#F7F2FF] transition font-semibold">Process</a>
             <a href="#testimonials" className="text-[#B9ADC9] hover:text-[#F7F2FF] transition font-semibold">Testimonials</a>
-            <button className="btn-luxury text-sm px-6 py-2">Apply Now</button>
+            <button onClick={() => setAuditionModalOpen(true)} className="btn-luxury text-sm px-6 py-2">Apply Now</button>
           </div>
 
           <button 
@@ -129,7 +131,7 @@ export default function Home() {
               </p>
 
               <div className="flex gap-4 flex-wrap mb-8">
-                <button className="btn-luxury">Start Registration</button>
+                <button onClick={() => setAuditionModalOpen(true)} className="btn-luxury">Start Registration</button>
                 <a href="#services" className="btn-luxury-outline">Explore Services</a>
                 <a href="#process" className="btn-ghost">How It Works</a>
               </div>
@@ -485,7 +487,7 @@ export default function Home() {
           <p className="text-xl text-[#B9ADC9] mb-8 max-w-2xl mx-auto">
             Join 2,847+ premium creators already scaling their empires with Luxe Creator.
           </p>
-          <button className="btn-luxury text-lg px-12 py-4">
+          <button onClick={() => setAuditionModalOpen(true)} className="btn-luxury text-lg px-12 py-4">
             Begin Application
           </button>
         </div>
@@ -534,6 +536,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Audition Modal */}
+      <AuditionModal isOpen={auditionModalOpen} onClose={() => setAuditionModalOpen(false)} />
     </div>
   );
 }
