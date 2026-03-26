@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Templates from "./pages/Templates";
 import ExclusiveContentPage from "./pages/ExclusiveContentPage";
+import SubscriptionsPage from "./pages/SubscriptionsPage";
 
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/templates"} component={Templates} />
       <Route path={"/exclusive"} component={ExclusiveContentPage} />
+      <Route path={"/subscriptions"} component={SubscriptionsPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
